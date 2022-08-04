@@ -102,6 +102,7 @@ namespace OWML.ModHelper.Menus
 				return null;
 			}
 			var menu = GameObject.Instantiate(Menu, Menu.transform.parent);
+			menu.name = Menu.name;
 			var modMenu = new ModPopupMenu(Console);
 			modMenu.Initialize(menu);
 			return modMenu;
@@ -110,6 +111,7 @@ namespace OWML.ModHelper.Menus
 		public IModPopupMenu Copy(string title)
 		{
 			var copy = Copy();
+			copy.Menu.name = title;
 			copy.Title = title;
 			return copy;
 		}

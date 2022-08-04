@@ -55,6 +55,7 @@ namespace OWML.ModHelper.Menus
 		public IModSelectorInput Copy()
 		{
 			var copy = GameObject.Instantiate(SelectorElement);
+			copy.name = SelectorElement.name;
 			GameObject.Destroy(copy.GetComponentInChildren<LocalizedText>(true));
 			return new ModSelectorInput(copy, Menu);
 		}
@@ -62,6 +63,7 @@ namespace OWML.ModHelper.Menus
 		public IModSelectorInput Copy(string title)
 		{
 			var copy = Copy();
+			copy.Element.name = title;
 			copy.Title = title;
 			return copy;
 		}

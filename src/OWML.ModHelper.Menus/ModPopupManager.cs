@@ -30,6 +30,7 @@ namespace OWML.ModHelper.Menus
 			_options = options;
 			var popupCanvas = popupInputMenu.transform.parent.gameObject;
 			var newCanvas = GameObject.Instantiate(popupCanvas);
+			newCanvas.name = popupCanvas.name;
 			newCanvas.AddComponent<DontDestroyOnLoad>();
 
 			var inputMenu = newCanvas.GetComponentInChildren<PopupInputMenu>(true);

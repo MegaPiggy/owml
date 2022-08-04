@@ -35,6 +35,7 @@ namespace OWML.ModHelper.Menus
 		public IModButton Copy(string title)
 		{
 			var copy = Copy();
+			copy.Button.name = title;
 			copy.Title = title;
 			return copy;
 		}

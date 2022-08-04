@@ -75,12 +75,14 @@ namespace OWML.ModHelper.Menus
 		public IModSeparator Copy()
 		{
 			var copy = GameObject.Instantiate(LayoutElement);
+			copy.name = LayoutElement.name;
 			return new ModSeparator(copy, Menu);
 		}
 
 		public IModSeparator Copy(string title)
 		{
 			var copy = Copy();
+			copy.Element.name = title;
 			copy.Title = title;
 			return copy;
 		}

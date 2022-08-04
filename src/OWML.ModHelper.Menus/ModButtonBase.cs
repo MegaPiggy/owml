@@ -39,6 +39,7 @@ namespace OWML.ModHelper.Menus
 		public IModButtonBase Copy()
 		{
 			var button = GameObject.Instantiate(Button);
+			button.name = Button.name;
 			GameObject.Destroy(button.GetComponent<SubmitAction>());
 			var modButton = (IModButtonBase)Activator.CreateInstance(GetType(), button, Menu);
 			modButton.Index = Index + 1;
