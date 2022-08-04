@@ -31,7 +31,7 @@ namespace OWML.ModHelper.Menus
 
 		private void SetupCommands()
 		{
-			var listenerObject = new GameObject();
+			var listenerObject = new GameObject("ModCommandListener");
 			CommandListener = listenerObject.AddComponent<ModCommandListener>();
 			_openCommands.ForEach(CommandListener.AddToListener);
 			CommandListener.OnNewlyPressed += OnOpenCommand;

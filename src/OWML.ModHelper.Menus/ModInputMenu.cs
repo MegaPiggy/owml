@@ -27,6 +27,7 @@ namespace OWML.ModHelper.Menus
 			Popup = menu;
 			var parent = menu.transform.parent.gameObject;
 			var parentCopy = GameObject.Instantiate(parent);
+			parentCopy.name = parent.name;
 			parentCopy.AddComponent<DontDestroyOnLoad>();
 			_inputMenu = parentCopy.transform.GetComponentInChildren<PopupInputMenu>(true);
 			GameObject.Destroy(_inputMenu.GetValue<Text>("_labelText").GetComponent<LocalizedText>());

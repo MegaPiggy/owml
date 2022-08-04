@@ -40,6 +40,7 @@ namespace OWML.ModHelper.Menus
 		public IModSliderInput Copy()
 		{
 			var copy = GameObject.Instantiate(_element);
+			copy.name = _element.name;
 			GameObject.Destroy(copy.GetComponentInChildren<LocalizedText>(true));
 			return new ModSliderInput(copy, Menu);
 		}
@@ -47,6 +48,7 @@ namespace OWML.ModHelper.Menus
 		public IModSliderInput Copy(string title)
 		{
 			var copy = Copy();
+			copy.Element.name = title;
 			copy.Title = title;
 			return copy;
 		}
