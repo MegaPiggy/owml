@@ -74,6 +74,7 @@ namespace OWML.ModLoader
 			_goHelper.CreateAndAdd<OwmlBehaviour>();
 			_unityLogger.Start();
 			EnumUtils.Initialize(_console, _harmonyHelper);
+			_harmonyHelper.AddPrefix<TabbedMenu>(nameof(TabbedMenu.OnUpdateInputDevice), typeof(Owo), nameof(TabbedMenu_OnUpdateInputDevice));
 			var mods = _modFinder.GetMods();
 
 			var changedSettings = mods.Where(mod => mod.FixConfigs()).Select(mod => mod.Manifest.Name).ToArray();
@@ -216,6 +217,15 @@ namespace OWML.ModLoader
 				_console.WriteLine($"Error while adding/initializing {helper.Manifest.UniqueName}: {ex}", MessageType.Error);
 				return null;
 			}
+		}
+
+		private static bool TabbedMenu_OnUpdateInputDevice(TabbedMenu __instance)
+		{
+			if ((object)__instance == null) return false;
+			if (__instance == null) return false;
+			if (__instance.gameObject == null) return false;
+			if (Utils.TypeExtensions.GetValue<UnityEngine.UI.Image>(__instance, "_tabLeftButtonImg") == null || Utils.TypeExtensions.GetValue<UnityEngine.UI.Image>(__instance, "_tabRightButtonImg") == null) return false;
+			return true;
 		}
 	}
 }
