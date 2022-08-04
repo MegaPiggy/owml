@@ -50,6 +50,7 @@ namespace OWML.ModHelper.Menus
 		protected GameObject CopyMenu()
 		{
 			var newMenuObject = GameObject.Instantiate(Popup.gameObject, Popup.transform.parent);
+			newMenuObject.name = Popup.name;
 			newMenuObject.transform.localScale = Popup.transform.localScale;
 			newMenuObject.transform.localPosition = Popup.transform.localPosition;
 			return newMenuObject;

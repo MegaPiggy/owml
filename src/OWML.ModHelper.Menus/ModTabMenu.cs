@@ -54,9 +54,11 @@ namespace OWML.ModHelper.Menus
 		public new IModTabMenu Copy()
 		{
 			var tabButton = GameObject.Instantiate(TabButton, TabButton.transform.parent);
+			tabButton.name = TabButton.name;
 			GameObject.Destroy(tabButton.GetComponentInChildren<LocalizedText>(true));
 			_text = tabButton.GetComponentInChildren<Text>(true);
 			var menu = GameObject.Instantiate(Menu, Menu.transform.parent);
+			menu.name = Menu.name;
 			tabButton.SetValue("_tabbedMenu", menu);
 			var modMenu = new ModTabMenu(_optionsMenu, Console);
 			modMenu.Initialize(tabButton);
@@ -66,6 +68,7 @@ namespace OWML.ModHelper.Menus
 		public new IModTabMenu Copy(string title)
 		{
 			var copy = Copy();
+			copy.Menu.name = title;
 			Title = title;
 			return copy;
 		}

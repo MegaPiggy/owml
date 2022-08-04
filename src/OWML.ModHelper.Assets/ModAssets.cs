@@ -32,7 +32,7 @@ namespace OWML.ModHelper.Assets
 
 		public IModAsset<GameObject> Load3DObject(string objectFilename, string imageFilename)
 		{
-			var modAsset = new GameObject().AddComponent<ObjectAsset>();
+			var modAsset = new GameObject(Path.GetFileNameWithoutExtension(objectFilename)).AddComponent<ObjectAsset>();
 			
 			var meshFilter = modAsset.AddComponent<MeshFilter>();
 			meshFilter.mesh = GetMesh(objectFilename);
@@ -46,7 +46,7 @@ namespace OWML.ModHelper.Assets
 
 		public IModAsset<MeshFilter> LoadMesh(string filename)
 		{
-			var modAsset = new GameObject().AddComponent<MeshAsset>();
+			var modAsset = new GameObject(Path.GetFileNameWithoutExtension(filename)).AddComponent<MeshAsset>();
 			var meshFilter = modAsset.AddComponent<MeshFilter>();
 			meshFilter.mesh = GetMesh(filename);
 			modAsset.SetAsset(meshFilter);
@@ -55,7 +55,7 @@ namespace OWML.ModHelper.Assets
 
 		public IModAsset<MeshRenderer> LoadTexture(string filename)
 		{
-			var modAsset = new GameObject().AddComponent<TextureAsset>();
+			var modAsset = new GameObject(Path.GetFileNameWithoutExtension(filename)).AddComponent<TextureAsset>();
 			var meshRenderer = modAsset.AddComponent<MeshRenderer>();
 			meshRenderer.material.mainTexture = GetTexture(filename);
 			modAsset.SetAsset(meshRenderer);
@@ -64,7 +64,7 @@ namespace OWML.ModHelper.Assets
 
 		public IModAsset<AudioSource> LoadAudio(string audioFilename)
 		{
-			var modAsset = new GameObject().AddComponent<AudioAsset>();
+			var modAsset = new GameObject(Path.GetFileNameWithoutExtension(audioFilename)).AddComponent<AudioAsset>();
 			var audioSource = modAsset.AddComponent<AudioSource>();
 			audioSource.clip = GetAudio(audioFilename);
 			modAsset.SetAsset(audioSource);
@@ -90,7 +90,7 @@ namespace OWML.ModHelper.Assets
 
 		public GameObject Get3DObject(string objectFilename, string imageFilename)
 		{
-			var go = new GameObject();
+			var go = new GameObject(Path.GetFileNameWithoutExtension(objectFilename));
 			go.AddComponent<MeshFilter>().mesh = GetMesh(objectFilename);
 			go.AddComponent<MeshRenderer>().material.mainTexture = GetTexture(imageFilename);
 			return go;

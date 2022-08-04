@@ -98,14 +98,14 @@ namespace OWML.LoadCustomAssets
 
 		private void LoadMusic()
 		{
-			_music = new GameObject().AddComponent<AudioSource>();
+			_music = new GameObject("SpiralMountain").AddComponent<AudioSource>();
 			_music.clip = ModHelper.Assets.GetAudio("spiral-mountain.mp3");
 			ModHelper.Console.WriteLine("Music loaded!");
 		}
 
 		private void LoadGunSound()
 		{
-			_shootSound = new GameObject().AddComponent<AudioSource>();
+			_shootSound = new GameObject("Shoot").AddComponent<AudioSource>();
 			_shootSound.clip = ModHelper.Assets.GetAudio("blaster-firing.wav");
 			ModHelper.Console.WriteLine("Gun sound loaded!");
 		}
@@ -175,6 +175,7 @@ namespace OWML.LoadCustomAssets
 		private void ShootDuck()
 		{
 			var duckBody = Instantiate(_duckBody);
+			duckBody.name = _duckBody.name;
 			duckBody.gameObject.SetActive(true);
 
 			duckBody.SetPosition(_playerTransform.position + _playerTransform.forward * 2f);
