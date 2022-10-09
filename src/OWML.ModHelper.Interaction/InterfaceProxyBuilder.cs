@@ -132,7 +132,7 @@ namespace OWML.ModHelper.Interaction
 			{
 				il.Emit(OpCodes.Ldarg, i + 1);
 			}
-			il.Emit(OpCodes.Call, target);
+			il.Emit(target.IsVirtual ? OpCodes.Callvirt : OpCodes.Call, target);
 
 			// return result
 			il.Emit(OpCodes.Ret);
