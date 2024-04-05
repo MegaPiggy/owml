@@ -1,8 +1,5 @@
 {
     "$schema": "https://json-schema.org/draft-07/schema",
-    "$docs": {
-        "Hide_In_Nav": true
-    },
     "type": "object",
     "additionalProperties": false,
     "required": [
