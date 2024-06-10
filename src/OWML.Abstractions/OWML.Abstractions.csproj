@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-		<TargetFramework>net48</TargetFramework>
-	  <LangVersion>9.0</LangVersion>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

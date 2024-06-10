@@ -3,10 +3,11 @@
 	<PropertyGroup>
 		<TargetFramework>net48</TargetFramework>
 		<LangVersion>9.0</LangVersion>
+		<DebugType>portable</DebugType>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="OuterWildsGameLibs" Version="1.1.15.1018" />
+		<PackageReference Include="OuterWildsGameLibs" Version="1.1.15.1018" />
 	</ItemGroup>
 
 </Project>

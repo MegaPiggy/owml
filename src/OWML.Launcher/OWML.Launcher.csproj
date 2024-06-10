@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-	  <LangVersion>9.0</LangVersion>
-	  <OutputType>Exe</OutputType>
+    <LangVersion>9.0</LangVersion>
+    <DebugType>portable</DebugType>
+    <OutputType>Exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>

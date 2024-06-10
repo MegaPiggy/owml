@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+	  <TargetFramework>net48</TargetFramework>
 	  <LangVersion>9.0</LangVersion>
+	  <DebugType>portable</DebugType>
 	  <PackageVersion>2.9.4</PackageVersion>
 	  <PackageId>OWML</PackageId>
 	  <Title>OWML</Title>
