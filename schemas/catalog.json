@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/schema-catalog.json",
+  "version": 1,
+  "schemas": [
+    {
+      "name": "OWML Mod Config",
+      "description": "Describes a mod config for the Outer Wilds Mod Loader",
+      "fileMatch": ["config.json"],
+      "url": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/config_schema.json"
+    },
+    {
+      "name": "OWML Mod Manifest",
+      "description": "Describes a mod manifest for the Outer Wilds Mod Loader",
+      "fileMatch": ["manifest.json"],
+      "url": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json"
+    },
+    {
+      "name": "New Horizons Planet",
+      "description": "Describes a planet config for the New Horizons framework",
+      "fileMatch": ["planets/**.json", "planets/**.jsonc"],
+      "url": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json"
+    },
+    {
+      "name": "New Horizons System",
+      "description": "Describes a star system config for the New Horizons framework",
+      "fileMatch": ["systems/**.json", "systems/**.jsonc"],
+      "url": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/system_schema.json"
+    },
+    {
+      "name": "New Horizons Translation",
+      "description": "Describes a translation config for the New Horizons framework",
+      "fileMatch": ["translations/*.json", "translations/*.jsonc"],
+      "url": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/translation_schema.json"
+    },
+    {
+      "name": "New Horizons Addon Manifest",
+      "description": "Describes an addon manifest for the New Horizons framework",
+      "fileMatch": ["addon-manifest.json", "addon-manifest.jsonc"],
+      "url": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/addon_manifest_schema.json"
+    }
+  ]
+}
